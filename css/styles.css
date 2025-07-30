@@ -1,0 +1,86 @@
+/* Modern CSS with animations and responsive design */
+:root {
+    --primary-color: #4a90e2;
+    --hover-color: #357abd;
+    --background-color: #f5f7fa;
+    --text-color: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.greeting-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.greeting-box:hover {
+    transform: translateY(-5px);
+}
+
+.greeting {
+    font-size: 4rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.8s ease;
+}
+
+.change-greeting {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.change-greeting:hover {
+    background-color: var(--hover-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .greeting {
+        font-size: 3rem;
+    }
+    
+    .greeting-box {
+        padding: 1.5rem;
+    }
+}
